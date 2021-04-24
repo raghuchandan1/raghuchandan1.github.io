@@ -538,9 +538,67 @@ p {
 }
 /*End contact Section */
 
+/* Badges Section */
+#badges {
+	/* background-image: linear-gradient( 160deg,  rgb(0, 253, 194) 30%,rgb(122, 213, 255) 60% ); */
+	/* background: #a8ff78; /* fallback for old browsers */
+  	/* background: -webkit-linear-gradient(160deg, #a8ff78, #78ffd6); /* Chrome 10-25, Safari 5.1-6 */
+  	/* background: linear-gradient(160deg, #a8ff78 0%, #78ffd6 50%); */
+	/* background-image: linear-gradient( 2.1deg,   #a8ff78 5%, #78ffd6 95.8% ); */
+	/* background-image: linear-gradient( 2.1deg,  rgba(116,253,210,1) 5%, rgba(0,191,247,1) 95.8% ); */
+	/* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(151,10,130,1) 0%, rgba(33,33,33,1) 100.2% ); */
+	/* background-image: linear-gradient( 109.6deg,  rgba(123,90,224,1) 11.2%, rgba(164,46,253,1) 32.6%, rgba(213,56,234,1) 62.7%, rgba(251,138,52,1) 100.2% ); */
+	/* background-image: radial-gradient( circle 523px at 7.1% 19.3%,  rgba(147,15,255,1) 2%, rgba(5,49,255,1) 100.7% ); */
+	/* background-image: linear-gradient( 91.1deg,  rgba(57,31,105,1) -2.3%, rgba(115,43,155,1) 44.4%, rgba(231,75,184,1) 103.4% ); */
+	background-image: linear-gradient( 112.9deg,  rgba(112,255,151,1) 6.2%, rgba(70,195,255,1) 99.7% );
+	
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: -1;
+}
+#badges .badges {
+	flex-direction: column;
+	text-align: center;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+#badges .badge-top {
+	max-width: 500px;
+	margin: 0 auto;
+}
+#badges .badge-bottom {
+	display: flex;
+	width: 80%;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+#badges .badge-item {
+	flex-basis: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	
+}
+
+#badges .badge-bottom .icon {
+	height: 200px;
+	width: 200px;
+	margin: 24px auto;
+}
+/* End Badges  Section */
+
 /* Footer */
 #footer {
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	/* background-image: linear-gradient(60deg, #29323c 0%, #485563 100%); */
+	background-color: #000;
 }
 #footer .footer {
 	min-height: 100px;
@@ -723,6 +781,13 @@ p {
 		padding-left: 20px;
 	}
 	/* End contact  */
+
+	/* Badges Section */
+	#badges .badge-bottom .badge-item {
+		flex-basis: 45%;
+		margin: 2%;
+	}
+	/* End Badges Section */
 }
 /* End Media Query For Tablet */
 
@@ -756,6 +821,13 @@ p {
 		margin: 12px;		
 	}
 	/* End Services Section */
+
+	/* Badges Section */
+	#badges .badge-bottom .badge-item {
+		flex-basis: 31%;
+		margin: 12px;		
+	}
+	/* End Badges Section */
 
 }
 /* End  Media Query For Desktop */
