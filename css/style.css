@@ -403,6 +403,7 @@ p {
 	color: white;
 }
 #projects .project-img {
+	align-items: center;
 	flex-basis: 50%;
 	height: 300px;
 	overflow: hidden;
@@ -719,7 +720,14 @@ p {
 	}
 	#projects .all-projects .project-img {
 		height: 100%;
+		text-align: center;
 	}
+	#projects .all-projects .project-img {
+		width: 100%;
+		max-height: 400px;
+	}
+	
+	
 	/* End Project */
 
 	/* About */
