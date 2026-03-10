@@ -1,27 +1,45 @@
-const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
-const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
-const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
-const header = document.querySelector('.header.container');
+/* ── Nav: hamburger + scroll header ── */
+const hamburger   = document.querySelector('.hamburger');
+const mobileMenu  = document.querySelector('.nav-list ul');
+const menuItems   = document.querySelectorAll('.nav-list ul li a');
+const header      = document.querySelector('.header.container');
 
 hamburger.addEventListener('click', () => {
-	hamburger.classList.toggle('active');
-	mobile_menu.classList.toggle('active');
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+});
+
+menuItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+  });
 });
 
 document.addEventListener('scroll', () => {
-	var scroll_position = window.scrollY;
-	if (scroll_position > 80) {
-		// header.style.backgroundColor = '#29323c';
-		header.style.backgroundColor = '#000000';
-		// header.style.backgroundColor = 'transparent';
-	} else {
-		header.style.backgroundColor = 'transparent';
-	}
+  if (window.scrollY > 60) {
+    header.style.backgroundColor = 'rgba(6, 13, 26, 0.85)';
+  } else {
+    header.style.backgroundColor = 'transparent';
+  }
 });
 
-menu_item.forEach((item) => {
-	item.addEventListener('click', () => {
-		hamburger.classList.toggle('active');
-		mobile_menu.classList.toggle('active');
-	});
-});
+/* ── Scroll-Reveal: Intersection Observer ── */
+const revealEls = document.querySelectorAll('.reveal-up, .reveal-left');
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); // animate once
+      }
+    });
+  },
+  {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px',
+  }
+);
+
+revealEls.forEach((el) => observer.observe(el));
